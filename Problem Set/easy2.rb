@@ -2,13 +2,11 @@
 #---------------------
 #1 From-To-Step Sequence Generator
 # def step(start_num, end_num, step_num)
-#   current_value = start_num
-#   loop do
-#     yield(current_value)
-#     break if current_value + step_num > end_num
-#     current_value += step_num
+#   value = start_num
+#   while value <= end_num
+#     yield(value)
+#     value += step_num
 #   end
-#   current_value
 # end
 
 # step(1, 10, 3) { |value| puts "value = #{value}" }

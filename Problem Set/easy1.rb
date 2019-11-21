@@ -24,15 +24,9 @@
 # def divisors(num)
 #   result = []
 #   1.upto(num).select do |digit| 
-#     if result.size < 2
 #       num % digit == 0
 #     end
 #   end
-#   result.each do |divisor|
-#     result << num / divisor
-#   end
-
-#   result
 # end
 # p divisors(1) == [1]
 # p divisors(7) == [1, 7]
@@ -122,13 +116,10 @@
 
 #9 Iterators: True for One?
 # def one?(collection)
-#   seen_one = false
-#   collection.each do |element|
-#     next unless yield(element)
-#     return false if seen_one
-#     seen_one = true
-#   end
-#   seen_one
+#   one = false
+#   updated = collection.select{|num| yield(num)}
+#   one = true if updated.size == 1
+#   one
 # end
 
 # p one?([1, 3, 5, 6]) { |value| value.even? }    # -> true
